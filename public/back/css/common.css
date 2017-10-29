@@ -6,3 +6,20 @@
     text-align: center;
 
 }
+.ad_aside{
+    width: 180px;
+    height: 100%;
+    background-color:#222d32;
+    position: absolute;
+}
+
+.ad_aside .brand a{
+    color:#fff;
+    font-size: 20px;
+    text-align: center;
+    font-weight:700;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    background-color: #337ab7;
+}

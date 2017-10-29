@@ -4,6 +4,7 @@ $(function () {
     //  2.用户密码不能为空
     //  3.用户密码长度为6-12位
     var $form = $("#form");
+   
     $form.bootstrapValidator({
 
 
