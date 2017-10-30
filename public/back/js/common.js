@@ -28,7 +28,8 @@ $(function () {
     // slideToggle()显示和隐藏之间切换
     $(".child").prev().on("click", function () {
         $(".child").slideToggle();
-    })
+    });
+    
     //点击icon_menu显示或者隐藏侧边栏 header的长度变长
     $(".icon_menu").on("click", function () {
         $(".ad_aside").toggleClass("now");
