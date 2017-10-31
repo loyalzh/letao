@@ -32,8 +32,8 @@
                     分类管理
                 </a>
                 <div class="child" style="display:block">
-                    <a href="first.html" class="now">一级分类</a>
-                    <a href="second.html">二级分类</a>
+                    <a href="first.html" >一级分类</a>
+                    <a href="second.html" class="now">二级分类</a>
                 </div>
             </li>
             <li>
@@ -104,12 +104,37 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">添加分类</h4>
+                <h4 class="modal-title">添加二级分类</h4>
             </div>
             <div class="modal-body">
                 <form id="form">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="categoryName" name="categoryName" placeholder="请输入一级分类名称">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                    data-toggle="dropdown">
+                                <span class="dropdown_text">请选择一级分类</span>
+                                <input type="hidden" name="categoryId" id="categoryId">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu"  aria-labelledby="dropdownMenu1">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="brandName" name="brandName" placeholder="请输入二级分类名称">
+                    </div>
+                    <div class="form-group">
+                        <div class="fileupload_box">
+                            <button type="button" class="btn btn-default">上传图片</button>
+                            <input type="file" id="fileupload" name="pic1" class="btn btn-default" data-url="/category/addSecondCategoryPic">
+                        </div>
+                    </div>
+                    <div class="form-group img_box">
+                        <img width="100" height="100" src="images/none.png" alt="">
+                        <input type="hidden" name="brandLogo" id="brandLogo">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="hot" id="hot" value="1">
                     </div>
                 </form>
             </div>
@@ -122,15 +147,24 @@
 </div>
 <!--准备模板-->
 <script type="text/html" id="tpl">
-   <tr>
-       <td></td>
-       <td></td>
-       <td></td>
-       <td></td>
-   </tr>
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)*size +i+1}}</td>
+        <td>{{v.categoryName}}</td>
+        <td>{{v.brandName}}</td>
+        <td><img width="50" height="50" src="{{v.brandLogo?v.brandLogo:'images/none.png'}}"></td>
+    </tr>
+    {{/each}}
+</script>
+<script type="text/html" id="tpl1">
+    {{each rows v i}}
+    <li><a href="javascript:;" data-id="{{v.id}}">{{v.categoryName}}</a></li>
+    {{/each}}
 </script>
 
 <script src="lib/jquery/jquery.js"></script>
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>

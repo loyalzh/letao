@@ -118,3 +118,30 @@ a:link,a:visited,a:hover,a:active{
 .mt20{
     margin-top: 20px;
 }
+
+.fileupload_box{
+    width: 100px;
+    height: 34px;
+    position: relative;
+    line-height: 34px;
+}
+.fileupload_box button{
+    width: 100%;
+    height: 100%;
+}
+.fileupload_box input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /*使文件按钮隐藏*/
+    opacity: 0;
+
+}
+.fileupload_box:hover button{
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+
+}
