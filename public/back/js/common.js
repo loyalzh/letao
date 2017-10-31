@@ -34,6 +34,7 @@ $(function () {
     $(".icon_menu").on("click", function () {
         $(".ad_aside").toggleClass("now");
         $(".ad_main").toggleClass("now");
+        $(".header").toggleClass("now");
     })
     //公用退出的功能
     $(".icon_loginout").on("click",function () {

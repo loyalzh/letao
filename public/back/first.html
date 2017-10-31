@@ -11,13 +11,12 @@
 <body>
 <aside class="ad_aside">
     <div class="brand">
-        <a href="indexManage.html">前端14期</a>
+        <a href="index.html">前端14期</a>
     </div>
     <div class="user">
-        <a href="javascript:;">
-            <img src="images/default.jpg" alt="">
-            <p>超级管理员</p>
-        </a>
+        <img src="images/default.jpg" alt="">
+        <p>超级管理员</p>
+
     </div>
     <div class="menu">
         <ul>
@@ -59,8 +58,21 @@
             <li class="active">一级分类</li>
         </ol>
         <div class="ad_content">
-            <div class="pic_left pull-left"></div>
-            <div class="pic_right pull-right"></div>
+            <button type="button" class="btn btn-default btn_add">添加分类</button>
+            <table class="table table-bordered table-hover mt20">
+                <thead>
+                <tr>
+                    <td width="20%">序号</td>
+                    <td width="80%">分类名称</td>
+                </tr>
+                </thead>
+                <tbody>
+                <!--挖个坑-->
+                </tbody>
+            </table>
+            <div class="text-right">
+                <ul id="paginator"></ul>
+            </div>
         </div>
     </div>
 </div>
@@ -69,7 +81,8 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">温馨提示</h4>
             </div>
             <div class="modal-body">
@@ -83,15 +96,46 @@
     </div>
 </div>
 
-
+<div class="modal fade" id="addModal" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">添加分类</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="categoryName" name="categoryName" placeholder="请输入一级分类名称">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" form="form" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="submit" form="form" class="btn btn-primary btn_confirm">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--准备模板-->
+<script type="text/html" id="tpl">
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)*size +i+1}}</td>
+        <td>{{v.categoryName}}</td>
+    </tr>
+    {{/each}}
+</script>
 
 <script src="lib/jquery/jquery.js"></script>
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
-<script src="lib/echarts/echarts.min.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
-<script src="js/user.js"></script>
+<script src="js/first.js"></script>
 
 
 </body>

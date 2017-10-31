@@ -40,7 +40,7 @@ $(function () {
                     //判断isDelete如果是禁用状态就改成启用状态 ，启用状态同理
                     isDelete = isDelete === 1 ? 0 : 1;
                     //点击确定按钮需要禁用或者启用该用户
-                    $(".btn_confirm").on("click",function () {
+                    $(".btn_confirm").off().on("click",function () {
                         $.ajax({
                             type:"post",
                             url:"/user/updateUser",
