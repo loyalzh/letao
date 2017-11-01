@@ -10,10 +10,10 @@
 .lt_category_l li {
   height: 50px;
   line-height: 50px;
-  border-right: 1px solid red;
-  border-bottom: 1px solid red;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   text-align: center;
-  background-color: pink;
+  background-color:#f3f4f5;
 }
 
 .lt_category_l li.now {
