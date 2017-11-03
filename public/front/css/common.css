@@ -136,3 +136,21 @@ img {
 .lt_product .item p span:last-child {
   text-decoration: line-through;
 }
+.loading{
+  width: 40px;
+  height: 40px;
+  border: 3px solid #069;
+  position: absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:300px;
+  animation:zhuan 1s infinite ease-in-out ;
+}
+@keyframes zhuan {
+  from{
+    transform:translateX(-50%) rotate(0deg);
+  }
+  to{
+    transform:translateX(-50%) rotate(360deg);
+  }
+}
