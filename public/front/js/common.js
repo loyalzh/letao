@@ -17,5 +17,10 @@ var tools = {
     },
     getParam:function (key) {
         return this.getParamObj()[key];
+    },
+    checkLogin:function (data) {
+       if(data.error==400){
+           location.href="login.html?retURL="+location.href;
+       } 
     }
 }

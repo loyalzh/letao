@@ -29,3 +29,6 @@
 .lt_item .info{
     font-size: 12px;
 }
+.lt_item .size.now{
+    background-color:#069;
+}

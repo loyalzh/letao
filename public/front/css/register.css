@@ -1,0 +1,29 @@
+.lt_content{
+    padding: 10px;
+}
+.form .code input{
+    width: 60%;
+}
+.form .code a{
+    width: 35%;
+    height: 40px;
+    line-height:40px;
+    font-size:17px;
+    padding: 0;
+}
+.form .register {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size:17px;
+    padding: 0;
+}
+.form .code .disabled {
+    background-color: #999;
+    border-color: #999;
+}
+.form .register_text{
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+}
